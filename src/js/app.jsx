@@ -23,10 +23,10 @@ class App extends Component {
           <Header />
           <Aside />
           <Switch>
-            <Route exact path="/">
+            <Route exact path="proiect-curs/src/">
               <Section products1={this.props.data.products} />
             </Route>
-            <Route path="/products">
+            {/* <Route path="/products">
               <Products data={this.props.data} />
             </Route>
             <Route
@@ -37,7 +37,7 @@ class App extends Component {
                   productName={match.params.productName}
                 />
               )}
-            />
+            /> */}
           </Switch>
         </StyledApp>
       </Router>
