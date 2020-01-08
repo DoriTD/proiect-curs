@@ -89,12 +89,12 @@ class Aside extends Component {
           </div>
           <ul className="menu">
             <li>
-              <NavLink exact to="/" activeClassName={"active"}>
+              <NavLink exact to={this.props.baseUrl} activeClassName={"active"}>
                 HOME
               </NavLink>
             </li>            
             <li>
-              <NavLink to="/products" activeClassName={"active"}>
+              <NavLink to={`${this.props.baseUrl}/products`} activeClassName={"active"}>
                 PRODUCTS
               </NavLink>
             </li>

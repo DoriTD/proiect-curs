@@ -20,8 +20,8 @@ class App extends Component {
     return (
       <Router>
         <StyledApp>
-          <Header />
-          <Aside />
+          <Header baseUrl={this.props.baseUrl}/>
+          <Aside baseUrl={this.props.baseUrl} />
           <Switch>
             <Route exact path={this.props.baseUrl}>
               <Section products1={this.props.data.products} />
