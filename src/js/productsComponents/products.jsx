@@ -48,6 +48,7 @@ class Products extends Component {
           brand={this.state.brand}
         />
         <ItemCategories
+          baseUrl={this.props.baseUrl}
           data={this.props.data}
           onKeyPress={this.onKeyPress}
           brand={this.state.brand}

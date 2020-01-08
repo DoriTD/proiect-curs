@@ -47,8 +47,8 @@ class Header extends Component {
         <i className="fas fa-couch"></i>
         <nav>
           <ul>
-            <li>              
-              <Link to="/">Home</Link>
+            <li>
+              <Link to={this.props.baseUrl}>Home</Link>
             </li>
             <li>
               <a href="#">About</a>

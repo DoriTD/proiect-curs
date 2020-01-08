@@ -16,19 +16,19 @@ class Section extends Component {
     return (
       <StyledSection>
         <div className="container">
-          <Product product={this.props.products1[0]} class={"col1"} />
-          <Product product={this.props.products1[3]} class={"col2"} />
-          <Product product={this.props.products1[2]} class={"col3"} />
+          <Product baseUrl={this.props.baseUrl} product={this.props.products1[0]} class={"col1"} />
+          <Product baseUrl={this.props.baseUrl} product={this.props.products1[3]} class={"col2"} />
+          <Product baseUrl={this.props.baseUrl} product={this.props.products1[2]} class={"col3"} />
         </div>
         <div className="container">
-          <Product product={this.props.products1[4]} class={"col3"} />
-          <Product product={this.props.products1[9]} class={"col2"} />
-          <Product product={this.props.products1[7]} class={"col1"} />
+          <Product baseUrl={this.props.baseUrl} product={this.props.products1[4]} class={"col3"} />
+          <Product baseUrl={this.props.baseUrl} product={this.props.products1[9]} class={"col2"} />
+          <Product baseUrl={this.props.baseUrl} product={this.props.products1[7]} class={"col1"} />
         </div>
         <div className="container">
-          <Product product={this.props.products1[8]} class={"col1"} />
-          <Product product={this.props.products1[10]} class={"col3"} />
-          <Product product={this.props.products1[11]} class={"col2"} />
+          <Product baseUrl={this.props.baseUrl} product={this.props.products1[8]} class={"col1"} />
+          <Product baseUrl={this.props.baseUrl} product={this.props.products1[10]} class={"col3"} />
+          <Product baseUrl={this.props.baseUrl} product={this.props.products1[11]} class={"col2"} />
         </div>
       </StyledSection>
     );

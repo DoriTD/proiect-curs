@@ -24,10 +24,10 @@ class App extends Component {
           <Aside baseUrl={this.props.baseUrl} />
           <Switch>
             <Route exact path={this.props.baseUrl}>
-              <Section products1={this.props.data.products} />
+              <Section baseUrl={this.props.baseUrl} products1={this.props.data.products} />
             </Route>
             <Route path={`${this.props.baseUrl}/products`}>
-              <Products data={this.props.data} />
+              <Products baseUrl={this.props.baseUrl} data={this.props.data} />
             </Route>
             <Route
               path={`${this.props.baseUrl}/:productName`}
