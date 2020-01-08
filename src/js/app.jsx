@@ -26,18 +26,18 @@ class App extends Component {
             <Route exact path="/proiect-curs/src">
               <Section products1={this.props.data.products} />
             </Route>
-            {/* <Route path="/products">
+            <Route path="/proiect-curs/src/products">
               <Products data={this.props.data} />
             </Route>
             <Route
-              path="/:productName"
+              path="/proiect-curs/src/:productName"
               render={({ match }) => (
                 <Product
                   data={this.props.data}
                   productName={match.params.productName}
                 />
               )}
-            /> */}
+            />
           </Switch>
         </StyledApp>
       </Router>
