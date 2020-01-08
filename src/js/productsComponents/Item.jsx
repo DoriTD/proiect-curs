@@ -51,7 +51,7 @@ class Item extends Component {
     const { imageUrl, price, name } = this.props.item;
     return (
       <StyledItem>
-        <NavLink to={`${this.props.baseUrl}/${name.toLowerCase().replace(" ", "-")}`} activeClassName={"active"}>
+        <NavLink to={`${this.props.baseUrl}${name.toLowerCase().replace(" ", "-")}`} activeClassName={"active"}>
           <img src={imageUrl} alt="" />
           <div>
             <div className="itemDescription">

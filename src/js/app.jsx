@@ -26,11 +26,11 @@ class App extends Component {
             <Route exact path={this.props.baseUrl}>
               <Section baseUrl={this.props.baseUrl} products1={this.props.data.products} />
             </Route>
-            <Route path={`${this.props.baseUrl}/products`}>
+            <Route path={`${this.props.baseUrl}products`}>
               <Products baseUrl={this.props.baseUrl} data={this.props.data} />
             </Route>
             <Route
-              path={`${this.props.baseUrl}/:productName`}
+              path={`${this.props.baseUrl}:productName`}
               render={({ match }) => (
                 <Product
                   data={this.props.data}

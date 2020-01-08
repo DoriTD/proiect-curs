@@ -94,7 +94,7 @@ class Aside extends Component {
               </NavLink>
             </li>            
             <li>
-              <NavLink to={`${this.props.baseUrl}/products`} activeClassName={"active"}>
+              <NavLink to={`${this.props.baseUrl}products`} activeClassName={"active"}>
                 PRODUCTS
               </NavLink>
             </li>

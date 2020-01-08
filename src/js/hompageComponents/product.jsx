@@ -73,7 +73,7 @@ class Product extends Component {
     return (
       <StyledProduct className={this.props.class}>
         <NavLink
-          to={`${this.props.baseUrl}/${name.toLowerCase().replace(" ", "-")}`}
+          to={`${this.props.baseUrl}${name.toLowerCase().replace(" ", "-")}`}
           activeClassName={"active"}
         >
           <p>From {price}$</p>

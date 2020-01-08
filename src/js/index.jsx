@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
   ReactDOM.render(
     <App
       baseUrl={
-        process.env.NODE_ENV == "production" ? "/proiect-curs/src" : "/"
+        process.env.NODE_ENV == "production" ? "/proiect-curs/src/" : "/"
       }
       data={data}
     />,
