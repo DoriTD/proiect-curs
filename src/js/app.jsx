@@ -23,7 +23,7 @@ class App extends Component {
           <Header />
           <Aside />
           <Switch>
-            <Route exact path="/proiect-curs/src/">
+            <Route exact path="/proiect-curs/src">
               <Section products1={this.props.data.products} />
             </Route>
             {/* <Route path="/products">
