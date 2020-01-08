@@ -23,14 +23,14 @@ class App extends Component {
           <Header />
           <Aside />
           <Switch>
-            <Route exact path="/proiect-curs/src">
+            <Route exact path={this.props.baseUrl}>
               <Section products1={this.props.data.products} />
             </Route>
-            <Route path="/proiect-curs/src/products">
+            <Route path={`${this.props.baseUrl}/products`}>
               <Products data={this.props.data} />
             </Route>
             <Route
-              path="/proiect-curs/src/:productName"
+              path={`${this.props.baseUrl}/:productName`}
               render={({ match }) => (
                 <Product
                   data={this.props.data}
