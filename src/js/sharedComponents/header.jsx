@@ -59,8 +59,8 @@ class Header extends Component {
           </ul>
         </nav>
         <div className="login">
-          <a href="#">Sign Up</a>
-          <a href="#">Sign In</a>
+          <a href="/sign-up">Sign Up</a>
+          <a href="/sign-in">Sign In</a>
         </div>
       </StyledHeader>
     );

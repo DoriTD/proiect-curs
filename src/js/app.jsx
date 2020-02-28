@@ -5,6 +5,7 @@ import Aside from "./sharedComponents/aside.jsx";
 import Section from "./hompageComponents/section.jsx";
 import Products from "./productsComponents/products.jsx";
 import Product from "./itemComponents/ItemDescription.jsx";
+import SignUp from "./autentification/signUp/index.jsx";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -28,6 +29,9 @@ class App extends Component {
             </Route>
             <Route path={`${this.props.baseUrl}products`}>
               <Products baseUrl={this.props.baseUrl} data={this.props.data} />
+            </Route>
+            <Route path={`${this.props.baseUrl}sign-up`}>
+              <SignUp baseUrl={this.props.baseUrl}  fire={this.props.fire}/>
             </Route>
             <Route
               path={`${this.props.baseUrl}:productName`}

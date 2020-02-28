@@ -23,3 +23,6 @@ node_modules/
 ### Webstorm ##
 .idea/
 .env
+
+yarn.lock
+src/build/out.js

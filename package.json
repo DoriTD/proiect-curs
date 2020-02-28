@@ -21,6 +21,8 @@
     "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
+    "firebase": "^7.9.2",
+    "@firebase/app": "^0.5.5",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "whatwg-fetch": "^3.0.0",
