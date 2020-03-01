@@ -68,8 +68,8 @@ export default props => {
       .onSnapshot(doc => {
         const prod = doc.data();
         const rating = [];
-        for (let i = 0; i < prod.rating; i++) rating.push(true);
-        for (let i = prod.rating; i < 5; i++) rating.push(false);
+        for (let i = 0; i < Math.round(prod.rating); i++) rating.push(true);
+        for (let i = Math.round(prod.rating); i < 5; i++) rating.push(false);
         setProduct({ ...prod, stars: rating });
       });
   }, []);
@@ -78,6 +78,27 @@ export default props => {
   };
   const onLeave = () => {
     setHover(false);
+  };
+  const userRatingEnter = count => () => {
+    const localRating = [];
+    for (let i = 0; i < 5; i++) localRating.push(i <= count);
+    setUserRating(localRating);
+  };
+  const userRatingLeave = count => () => {
+    setUserRating([false, false, false, false, false]);
+  };
+  const onSetUserRating = count => () => {
+    const newRating =
+      (product.rating * product.ratingUserCount + (count + 1)) /
+      (product.ratingUserCount + 1);
+    props.fire
+      .firestore()
+      .collection("products")
+      .doc(props.productName)
+      .update({
+        ratingUserCount: product.ratingUserCount + 1,
+        rating: newRating
+      });
   };
 
   return (
@@ -111,9 +132,23 @@ export default props => {
                   <div className="userRating">
                     {userRating.map((rat, i) =>
                       rat ? (
-                        <FullStar key={i} width="20" height="20" />
+                        <FullStar
+                          onMouseEnter={userRatingEnter(i)}
+                          onMouseLeave={userRatingLeave(i)}
+                          onClick={onSetUserRating(i)}
+                          key={i}
+                          width="20"
+                          height="20"
+                        />
                       ) : (
-                        <Star key={i} width="20" height="20" />
+                        <Star
+                          onMouseEnter={userRatingEnter(i)}
+                          onMouseLeave={userRatingLeave(i)}
+                          onClick={onSetUserRating(i)}
+                          key={i}
+                          width="20"
+                          height="20"
+                        />
                       )
                     )}
                   </div>
