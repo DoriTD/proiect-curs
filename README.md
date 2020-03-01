@@ -6,16 +6,16 @@
 * look good
 * subscribe mock functionality - with real data
 * social media links using dori's links
-* put on firebase
+* put on firebase //.............done
 * logo change (furniture site)
 
 
 
 ## HOMEPAGE
-* about - static page - with project description
-* contact - contact details
-* sign up / in with real users
-* real products - with discounts and new/old
+* about - static page - with project description // dori
+* contact - contact details // dori
+* sign up / in with real users //...............done
+* real products - with discounts and date created
 * add to cart / view cart
 * favorites - working
 * checkout - empties cart

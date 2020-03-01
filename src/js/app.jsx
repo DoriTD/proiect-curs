@@ -6,8 +6,8 @@ import Section from "./hompageComponents/section.jsx";
 import Products from "./productsComponents/products.jsx";
 import Product from "./itemComponents/ItemDescription.jsx";
 import SignUp from "./autentification/signUp/index.jsx";
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SignIn from "./autentification/SignIn/index.jsx";
 
 const StyledApp = styled.div`
   display: grid;
@@ -43,7 +43,7 @@ export default props => {
         <Aside baseUrl={props.baseUrl} />
         <Switch>
           <Route exact path={props.baseUrl}>
-            <Section baseUrl={props.baseUrl} products1={props.data.products} />
+            <Section db={props.db} fire={props.fire} baseUrl={props.baseUrl} products1={props.data.products} />
           </Route>
           <Route path={`${props.baseUrl}products`}>
             <Products baseUrl={props.baseUrl} data={props.data} />
@@ -52,6 +52,12 @@ export default props => {
             <SignUp
               name={name}
               callback={callback}
+              baseUrl={props.baseUrl}
+              fire={props.fire}
+            />
+          </Route>
+          <Route path={`${props.baseUrl}sign-in`}>
+            <SignIn
               baseUrl={props.baseUrl}
               fire={props.fire}
             />
