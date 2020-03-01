@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "./sharedComponents/header.jsx";
 import Aside from "./sharedComponents/aside.jsx";
@@ -9,44 +9,64 @@ import SignUp from "./autentification/signUp/index.jsx";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-class App extends Component {
-  render() {
-    const StyledApp = styled.div`
-      display: grid;
-      grid-template: 50px auto / 300px auto;
-      grid-template-areas:
-        "header header"
-        "aside section";
-    `;
-    return (
-      <Router>
-        <StyledApp>
-          <Header baseUrl={this.props.baseUrl}/>
-          <Aside baseUrl={this.props.baseUrl} />
-          <Switch>
-            <Route exact path={this.props.baseUrl}>
-              <Section baseUrl={this.props.baseUrl} products1={this.props.data.products} />
-            </Route>
-            <Route path={`${this.props.baseUrl}products`}>
-              <Products baseUrl={this.props.baseUrl} data={this.props.data} />
-            </Route>
-            <Route path={`${this.props.baseUrl}sign-up`}>
-              <SignUp baseUrl={this.props.baseUrl}  fire={this.props.fire}/>
-            </Route>
-            <Route
-              path={`${this.props.baseUrl}:productName`}
-              render={({ match }) => (
-                <Product
-                  data={this.props.data}
-                  productName={match.params.productName}
-                />
-              )}
-            />
-          </Switch>
-        </StyledApp>
-      </Router>
-    );
-  }
-}
+const StyledApp = styled.div`
+  display: grid;
+  grid-template: 50px auto / 300px auto;
+  grid-template-areas:
+    "header header"
+    "aside section";
+`;
 
-export default App;
+export default props => {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [name, setName] = useState(
+    props.fire.auth().currentUser
+      ? props.fire.auth().currentUser.disPlayName
+      : ""
+  );
+  const callback = () => {
+    setName(props.fire.auth().currentUser.disPlayName);
+    window.location = "/";
+  };
+  useEffect(() =>
+    props.fire.auth().onAuthStateChanged(user => setCurrentUser(user))
+  );
+
+  return (
+    <Router>
+      <StyledApp>
+        <Header
+          fire={props.fire}
+          currentUser={currentUser}
+          baseUrl={props.baseUrl}
+        />
+        <Aside baseUrl={props.baseUrl} />
+        <Switch>
+          <Route exact path={props.baseUrl}>
+            <Section baseUrl={props.baseUrl} products1={props.data.products} />
+          </Route>
+          <Route path={`${props.baseUrl}products`}>
+            <Products baseUrl={props.baseUrl} data={props.data} />
+          </Route>
+          <Route path={`${props.baseUrl}sign-up`}>
+            <SignUp
+              name={name}
+              callback={callback}
+              baseUrl={props.baseUrl}
+              fire={props.fire}
+            />
+          </Route>
+          <Route
+            path={`${props.baseUrl}:productName`}
+            render={({ match }) => (
+              <Product
+                data={props.data}
+                productName={match.params.productName}
+              />
+            )}
+          />
+        </Switch>
+      </StyledApp>
+    </Router>
+  );
+};
