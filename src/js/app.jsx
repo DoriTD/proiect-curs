@@ -43,7 +43,12 @@ export default props => {
         <Aside baseUrl={props.baseUrl} />
         <Switch>
           <Route exact path={props.baseUrl}>
-            <Section db={props.db} fire={props.fire} baseUrl={props.baseUrl} products1={props.data.products} />
+            <Section
+              db={props.db}
+              fire={props.fire}
+              baseUrl={props.baseUrl}
+              products1={props.data.products}
+            />
           </Route>
           <Route exact path={`${props.baseUrl}products`}>
             <Products baseUrl={props.baseUrl} data={props.data} />
@@ -57,16 +62,13 @@ export default props => {
             />
           </Route>
           <Route path={`${props.baseUrl}sign-in`}>
-            <SignIn
-              baseUrl={props.baseUrl}
-              fire={props.fire}
-            />
+            <SignIn baseUrl={props.baseUrl} fire={props.fire} />
           </Route>
           <Route
             path={`${props.baseUrl}products/:productName`}
             render={({ match }) => (
               <Product
-                data={props.data}
+                fire={props.fire}
                 productName={match.params.productName}
               />
             )}
