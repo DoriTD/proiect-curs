@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 class Product extends Component {
   render() {
-    const { imageUrl, name, price } = this.props.product;
+    const { imageUrl, name, price, id } = this.props.product;
     const StyledProduct = styled.article`
       width: 100%;
       background-image: url(${imageUrl});
@@ -73,7 +73,7 @@ class Product extends Component {
     return (
       <StyledProduct className={this.props.class}>
         <NavLink
-          to={`${this.props.baseUrl}${name.toLowerCase().replace(" ", "-")}`}
+          to={`${this.props.baseUrl}products/${id}`}
           activeClassName={"active"}
         >
           <p>From {price}$</p>

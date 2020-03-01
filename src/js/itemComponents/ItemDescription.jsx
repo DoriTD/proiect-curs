@@ -44,13 +44,7 @@ class ItemDescription extends Component {
       price,
       name,
       description
-    } = this.props.data.products.filter(i => {
-      if (i.name.toLowerCase().replace(" ", "-") == this.props.productName) {
-        return true;
-      } else {
-        return false;
-      }
-    })[0];
+    } = this.props.data.products[0];
     return (
       <StyledItem>
         <img src={imageUrl} alt="" />

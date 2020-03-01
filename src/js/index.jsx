@@ -4,7 +4,7 @@ import App from "./app.jsx";
 import data from "./products";
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import 'firebase/database';
+import 'firebase/firestore';
 import 'firebase/analytics';
 document.addEventListener("DOMContentLoaded", function() {
   var firebaseConfig = {

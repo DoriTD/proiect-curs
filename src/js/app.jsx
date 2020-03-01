@@ -45,7 +45,7 @@ export default props => {
           <Route exact path={props.baseUrl}>
             <Section db={props.db} fire={props.fire} baseUrl={props.baseUrl} products1={props.data.products} />
           </Route>
-          <Route path={`${props.baseUrl}products`}>
+          <Route exact path={`${props.baseUrl}products`}>
             <Products baseUrl={props.baseUrl} data={props.data} />
           </Route>
           <Route path={`${props.baseUrl}sign-up`}>
@@ -63,7 +63,7 @@ export default props => {
             />
           </Route>
           <Route
-            path={`${props.baseUrl}:productName`}
+            path={`${props.baseUrl}products/:productName`}
             render={({ match }) => (
               <Product
                 data={props.data}
