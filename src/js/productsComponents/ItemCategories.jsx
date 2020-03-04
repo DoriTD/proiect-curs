@@ -132,7 +132,7 @@ class ItemCategories extends Component {
             }
           })
           .map((item, index) => (
-            <Item baseUrl={this.props.baseUrl} key={index} item={item} />
+            <Item key={index} item={item} />
           ))}
       </StyledItems>
     );

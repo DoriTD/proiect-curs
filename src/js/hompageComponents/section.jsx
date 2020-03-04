@@ -64,8 +64,7 @@ export default props => {
     <StyledSection>
       {products.length > 1 &&
         products.map((product, i) => (
-          <Product
-            baseUrl={props.baseUrl}
+          <Product           
             product={product}
             class={`product prod${i + 1}`}
           />

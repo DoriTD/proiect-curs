@@ -12,7 +12,7 @@ import SignIn from "./autentification/SignIn/index.jsx";
 
 const StyledApp = styled.div`
   display: grid;
-  grid-template: 50px auto / 300px auto;
+  grid-template: 50px auto 300px/ 300px auto;
   grid-template-areas:
     "header header"
     "aside section"
@@ -37,37 +37,27 @@ export default props => {
   return (
     <Router>
       <StyledApp>
-        <Header
-          fire={props.fire}
-          currentUser={currentUser}
-          baseUrl={props.baseUrl}
-        />
-        <Aside baseUrl={props.baseUrl} />
+        <Header fire={props.fire} currentUser={currentUser} />
+        <Aside />
         <Switch>
-          <Route exact path={props.baseUrl}>
+          <Route exact path="/">
             <Section
               db={props.db}
               fire={props.fire}
-              baseUrl={props.baseUrl}
               products1={props.data.products}
             />
           </Route>
-          <Route exact path={`${props.baseUrl}products`}>
-            <Products baseUrl={props.baseUrl} data={props.data} />
+          <Route exact path={`/products`}>
+            <Products data={props.data} />
           </Route>
-          <Route path={`${props.baseUrl}sign-up`}>
-            <SignUp
-              name={name}
-              callback={callback}
-              baseUrl={props.baseUrl}
-              fire={props.fire}
-            />
+          <Route path={`/sign-up`}>
+            <SignUp name={name} callback={callback} fire={props.fire} />
           </Route>
-          <Route path={`${props.baseUrl}sign-in`}>
-            <SignIn baseUrl={props.baseUrl} fire={props.fire} />
+          <Route path={`/sign-in`}>
+            <SignIn fire={props.fire} />
           </Route>
           <Route
-            path={`${props.baseUrl}products/:productName`}
+            path={`/products/:productName`}
             render={({ match }) => (
               <Product
                 fire={props.fire}
@@ -76,7 +66,7 @@ export default props => {
             )}
           />
         </Switch>
-        <Footer/>
+        <Footer />
       </StyledApp>
     </Router>
   );

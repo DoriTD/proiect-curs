@@ -73,7 +73,7 @@ class Product extends Component {
     return (
       <StyledProduct className={this.props.class}>
         <NavLink
-          to={`${this.props.baseUrl}products/${id}`}
+          to={`/products/${id}`}
           activeClassName={"active"}
         >
           <p>From {price}$</p>

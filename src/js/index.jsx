@@ -2,10 +2,10 @@ import ReactDOM from "react-dom";
 import React from "react";
 import App from "./app.jsx";
 import data from "./products";
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
-import 'firebase/analytics';
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
+import "firebase/analytics";
 document.addEventListener("DOMContentLoaded", function() {
   var firebaseConfig = {
     apiKey: "AIzaSyCD9rKtqqynmTDaS1TDasph_CAMpT77rcU",
@@ -21,13 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const fire = firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   ReactDOM.render(
-    <App
-      baseUrl={
-        process.env.NODE_ENV == "production" ? "/proiect-curs/src/" : "/"
-      }
-      data={data}
-      fire={fire}
-    />,
+    <App data={data} fire={fire} />,
     document.getElementById("app")
   );
 });

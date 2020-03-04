@@ -88,7 +88,7 @@ const StyledSignIn = styled.section`
 
 export default props => {
   const onSignIn = () => {
-    //console.log("baslkncda");
+    console.log("baslkncda");
     props.fire
       .auth()
       .signInWithEmailAndPassword(email, password)

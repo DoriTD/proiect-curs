@@ -60,7 +60,7 @@ export default props => {
       <nav>
         <ul>
           <li>
-            <Link to={props.baseUrl}>Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <a href="#">About</a>
