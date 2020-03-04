@@ -6,7 +6,7 @@ const StyledHeader = styled.header`
   grid-area: header;
   background-color: #333;
   display: grid;
-  grid-template: 50px/ 40px auto 250px;
+  grid-template: 50px / 40px auto 250px;
   grid-template-areas: "logo nav login";
   > i {
     grid-area: logo;

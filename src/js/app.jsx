@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "./sharedComponents/header.jsx";
+import Footer from "./sharedComponents/footer.jsx";
 import Aside from "./sharedComponents/aside.jsx";
 import Section from "./hompageComponents/section.jsx";
 import Products from "./productsComponents/products.jsx";
@@ -14,7 +15,8 @@ const StyledApp = styled.div`
   grid-template: 50px auto / 300px auto;
   grid-template-areas:
     "header header"
-    "aside section";
+    "aside section"
+    "footer footer";
 `;
 
 export default props => {
@@ -74,6 +76,7 @@ export default props => {
             )}
           />
         </Switch>
+        <Footer/>
       </StyledApp>
     </Router>
   );

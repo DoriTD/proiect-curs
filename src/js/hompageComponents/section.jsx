@@ -3,11 +3,43 @@ import styled from "styled-components";
 import Product from "./product.jsx";
 
 const StyledSection = styled.section`
+  display: grid;
   grid-area: section;
-  height: 1500px;
-  .container {
-    width: 33.3333%;
-    float: left;
+  grid-template: 470px 40px 200px 200px 80px 120px 460px / auto;
+  grid-template-areas:
+    "prod1 prod2 prod3"
+    "prod1 prod2 prod6"
+    "prod4 prod2 prod6"
+    "prod4 prod5 prod6"
+    "prod4 prod5 prod9"
+    "prod7 prod5 prod9"
+    "prod7 prod8 prod9";
+  .prod1 {
+    grid-area: prod1;
+  }
+  .prod2 {
+    grid-area: prod2;
+  }
+  .prod3 {
+    grid-area: prod3;
+  }
+  .prod4 {
+    grid-area: prod4;
+  }
+  .prod5 {
+    grid-area: prod5;
+  }
+  .prod6 {
+    grid-area: prod6;
+  }
+  .prod7 {
+    grid-area: prod7;
+  }
+  .prod8 {
+    grid-area: prod8;
+  }
+  .prod9 {
+    grid-area: prod9;
   }
 `;
 export default props => {
@@ -30,61 +62,15 @@ export default props => {
   );
   return (
     <StyledSection>
-      {products.length > 1 && (
-        <div>
-          <div className="container">
-            <Product
-              baseUrl={props.baseUrl}
-              product={products[0]}
-              class={"col1"}
-            />
-            <Product
-              baseUrl={props.baseUrl}
-              product={products[1]}
-              class={"col2"}
-            />
-            <Product
-              baseUrl={props.baseUrl}
-              product={products[2]}
-              class={"col3"}
-            />
-          </div>
-          <div className="container">
-            <Product
-              baseUrl={props.baseUrl}
-              product={products[3]}
-              class={"col3"}
-            />
-            <Product
-              baseUrl={props.baseUrl}
-              product={products[4]}
-              class={"col2"}
-            />
-            <Product
-              baseUrl={props.baseUrl}
-              product={products[5]}
-              class={"col1"}
-            />
-          </div>
-          <div className="container">
-            <Product
-              baseUrl={props.baseUrl}
-              product={products[6]}
-              class={"col1"}
-            />
-            <Product
-              baseUrl={props.baseUrl}
-              product={products[7]}
-              class={"col3"}
-            />
-            <Product
-              baseUrl={props.baseUrl}
-              product={products[8]}
-              class={"col2"}
-            />
-          </div>
-        </div>
-      )}
+      {products.length > 1 &&
+        products.map((product, i) => (
+          <Product
+            baseUrl={props.baseUrl}
+            product={product}
+            class={`product prod${i + 1}`}
+          />
+        ))
+      }
     </StyledSection>
   );
 };

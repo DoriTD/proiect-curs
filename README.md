@@ -1,7 +1,7 @@
 # TODO
 
 ## GLOBAL
-* footer
+* footer // in work
 * responsive
 * look good
 * subscribe mock functionality - with real data
@@ -12,9 +12,9 @@
 
 
 ## HOMEPAGE
-* about - static page - with project description // dori
-* contact - contact details // dori
-* sign up / in with real users //...............done
+* about - static page - with project description // in work
+* contact - contact details // in work
+* sign up / in with real users + CSS//...............done
 * real products - with discounts and date created
 * add to cart / view cart
 * favorites - working

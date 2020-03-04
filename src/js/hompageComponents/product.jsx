@@ -59,15 +59,15 @@ class Product extends Component {
           opacity: 1;
         }
       }
-      &.col1 {
-        height: 600px;
-      }
-      &.col2 {
-        height: 400px;
-      }
-      &.col3 {
-        height: 500px;
-      }
+      // &.col1 {
+      //   height: 600px;
+      // }
+      // &.col2 {
+      //   height: 400px;
+      // }
+      // &.col3 {
+      //   height: 500px;
+      // }
     `;
 
     return (
