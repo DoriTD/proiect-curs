@@ -39,8 +39,8 @@ const StyledSignUp = styled.section`
         -webkit-transition: background-color 0.3s;
         transition: background-color 0.3s;
         :hover,
-        focus {
-          background-color: #eeeeee;
+        :focus {
+          background-color: #D6D6D6;
         }
       }
       label {

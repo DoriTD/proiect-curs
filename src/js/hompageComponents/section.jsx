@@ -67,6 +67,7 @@ export default props => {
           <Product           
             product={product}
             class={`product prod${i + 1}`}
+            key={i}
           />
         ))
       }

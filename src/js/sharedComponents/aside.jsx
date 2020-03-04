@@ -99,15 +99,15 @@ class Aside extends Component {
               </NavLink>
             </li>
             <li>
-              <a href="">CART</a>
+              <a href="#">CART</a>
               <i className="fas fa-shopping-basket"></i>
             </li>
             <li>
-              <a href="">FAVOURITES</a>
+              <a href="#">FAVOURITES</a>
               <i className="far fa-heart"></i>
             </li>
             <li>
-              <a href="">CHECKOUT</a>
+              <a href="#">CHECKOUT</a>
             </li>
           </ul>
           <div>

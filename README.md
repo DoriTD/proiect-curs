@@ -39,3 +39,9 @@
 * image slider
 
 
+### IMPROVMENTS -for later
+* button component for reuse ?
+* gradient sign in / up 
+* sbscribe button -send email?
+* 
+
