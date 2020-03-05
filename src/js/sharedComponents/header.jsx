@@ -90,8 +90,8 @@ export default props => {
         )}
         {!props.currentUser && (
           <div>
-            <a href="/sign-up">Sign Up</a>
-            <a href="/sign-in">Sign In</a>
+            <Link to="/sign-up">Sign Up</Link>
+            <Link to="/sign-in">Sign In</Link>
           </div>
         )}
       </div>
