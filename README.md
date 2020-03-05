@@ -33,6 +33,7 @@
 * add to cart - add 1 product in cart and show Shopping Cart notification (do not leave page)
 * multi brand filter
 * color and price filter //low priority
+* all filtering, sorting, searching and paging needs to be done on the back end
 
 ## PRODUCT
 * in stock
