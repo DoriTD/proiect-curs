@@ -51,9 +51,9 @@ class Item extends Component {
     const { imageUrl, price, name } = this.props.item;
     return (
       <StyledItem>
-        <a to={name} href={`/products/${this.props.item.id}`}>
+        <NavLink to={`/products/${this.props.item.id}`}>
           <img src={imageUrl} alt="" />
-        </a>
+        </NavLink>
         <div>
           <div className="itemDescription">
             <p>{price}$</p>
