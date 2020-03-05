@@ -32,7 +32,7 @@ class Product extends Component {
         bottom: 0;
         left: 0;
         right: 0;
-        color:black;
+        color: black;
       }
       h3 {
         position: absolute;
@@ -59,23 +59,11 @@ class Product extends Component {
           opacity: 1;
         }
       }
-      // &.col1 {
-      //   height: 600px;
-      // }
-      // &.col2 {
-      //   height: 400px;
-      // }
-      // &.col3 {
-      //   height: 500px;
-      // }
     `;
 
     return (
       <StyledProduct className={this.props.class}>
-        <NavLink
-          to={`/products/${id}`}
-          activeClassName={"active"}
-        >
+        <NavLink to={`/products/${id}`} activeClassName={"active"}>
           <p>From {price}$</p>
           <h3>{name}</h3>
         </NavLink>

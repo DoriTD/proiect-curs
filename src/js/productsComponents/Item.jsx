@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import colors from "../sharedComponents/colors";
-import Star from "../sharedComponents/icons/star.svg";
 import ShoppingBasket from "../sharedComponents/icons/shopping-basket.svg";
 import { NavLink } from "react-router-dom";
+import Rating from "../sharedComponents/rating.jsx";
 
 class Item extends Component {
   render() {
@@ -51,28 +51,27 @@ class Item extends Component {
     const { imageUrl, price, name } = this.props.item;
     return (
       <StyledItem>
-        <NavLink to={name} activeClassName={"active"}>
+        <a to={name} href={`/products/${this.props.item.id}`}>
           <img src={imageUrl} alt="" />
-          <div>
-            <div className="itemDescription">
-              <p>{price}$</p>
-              <h3>{name}</h3>
-            </div>
-            <div className="itemActions">
-              <div className="rating">
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-              </div>
-              <div className="cart">
-                <ShoppingBasket />
-              </div>
-            </div>
-            <div className="clearFix"></div>
+        </a>
+        <div>
+          <div className="itemDescription">
+            <p>{price}$</p>
+            <h3>{name}</h3>
           </div>
-        </NavLink>
+          <div className="itemActions">
+            <Rating
+              fire={this.props.fire}
+              rating={this.props.item.rating}
+              ratingUserCount={this.props.item.ratingUserCount}
+              productName={this.props.productName}
+            />
+            <div className="cart">
+              <ShoppingBasket />
+            </div>
+          </div>
+          <div className="clearFix"></div>
+        </div>
       </StyledItem>
     );
   }

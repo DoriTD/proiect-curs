@@ -48,7 +48,7 @@ export default props => {
             />
           </Route>
           <Route exact path={`/products`}>
-            <Products data={props.data} />
+            <Products data={props.data} fire={props.fire} />
           </Route>
           <Route path={`/sign-up`}>
             <SignUp name={name} callback={callback} fire={props.fire} />

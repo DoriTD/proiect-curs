@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import colors from "../sharedComponents/colors";
 import Star from "../sharedComponents/icons/star.svg";
+import Rating from "../sharedComponents/rating.jsx";
 import FullStar from "../sharedComponents/icons/full-star.svg";
 import LightStar from "../sharedComponents/icons/light-star.svg";
 import LightFullStar from "../sharedComponents/icons/light-full-star.svg";
@@ -112,48 +113,12 @@ export default props => {
               <h3>{product.name}</h3>
             </div>
             <div className="itemActions">
-              <div
-                className="rating"
-                onMouseEnter={onEnter}
-                onMouseLeave={onLeave}
-              >
-                {!hover && (
-                  <div className="globalRating">
-                    {product.stars.map((rat, i) =>
-                      rat ? (
-                        <FullStar key={i} width="20" height="20" />
-                      ) : (
-                        <Star key={i} width="20" height="20" />
-                      )
-                    )}
-                  </div>
-                )}
-                {hover && (
-                  <div className="userRating">
-                    {userRating.map((rat, i) =>
-                      rat ? (
-                        <FullStar
-                          onMouseEnter={userRatingEnter(i)}
-                          onMouseLeave={userRatingLeave(i)}
-                          onClick={onSetUserRating(i)}
-                          key={i}
-                          width="20"
-                          height="20"
-                        />
-                      ) : (
-                        <Star
-                          onMouseEnter={userRatingEnter(i)}
-                          onMouseLeave={userRatingLeave(i)}
-                          onClick={onSetUserRating(i)}
-                          key={i}
-                          width="20"
-                          height="20"
-                        />
-                      )
-                    )}
-                  </div>
-                )}
-              </div>
+              <Rating
+              fire={props.fire}
+                rating={product.rating}
+                ratingUserCount={product.ratingUserCount}
+                productName={props.productName}
+              />
               <div className="cart">
                 <ShoppingBasket />
               </div>

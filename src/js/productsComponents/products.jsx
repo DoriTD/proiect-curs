@@ -47,7 +47,8 @@ class Products extends Component {
           category={this.state.category}
           brand={this.state.brand}
         />
-        <ItemCategories         
+        <ItemCategories    
+          fire={this.props.fire}     
           data={this.props.data}
           onKeyPress={this.onKeyPress}
           brand={this.state.brand}
