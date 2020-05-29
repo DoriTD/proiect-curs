@@ -25,10 +25,10 @@ class Item extends Component {
         &:before {
           content: " ";
           height: 4px;
-          background-color: #fbb710;
           width: 80px;
           position: absolute;
           top: 15px;
+          background-color: #fbb710;
         }
       }
       .itemActions {

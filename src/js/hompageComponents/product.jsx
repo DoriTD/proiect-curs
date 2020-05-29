@@ -7,23 +7,25 @@ class Product extends Component {
     const { imageUrl, name, price, id } = this.props.product;
     const StyledProduct = styled.article`
       width: 100%;
+      position: relative;
       background-image: url(${imageUrl});
       background-repeat: no-repeat;
       background-size: cover;
-      position: relative;
       cursor: pointer;
+
       p {
         position: absolute;
         top: 20px;
         left: 30px;
         color: #555555;
+
         &:before {
           content: " ";
-          height: 4px;
-          background-color: #fbb710;
           width: 80px;
+          height: 4px;
           position: absolute;
           top: -7px;
+          background-color: #fbb710;
         }
       }
       a {
@@ -41,14 +43,14 @@ class Product extends Component {
       }
       &:before {
         content: " ";
-        background-color: rgba(60, 60, 60, 0.6);
-        transition-duration: 250ms;
-        opacity: 0;
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
+        background-color: rgba(60, 60, 60, 0.6);
+        transition-duration: 250ms;
+        opacity: 0;
       }
       &:hover {
         p,

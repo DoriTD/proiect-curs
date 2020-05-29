@@ -120,7 +120,7 @@ export default props => {
         })
         .filter(i => {
           //console.log(props.category);
-          //console.log(i.category);
+          console.log(i.category);
           if (
             props.category == i.category ||
             props.category == "All"

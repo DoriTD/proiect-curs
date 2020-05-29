@@ -1,11 +1,11 @@
 # TODO
 
 ## GLOBAL
-* footer // in work
+* footer // in work //..........done
 * responsive
 * look good
 * subscribe mock functionality - with real data
-* social media links using dori's links
+* social media links using links 
 * put on firebase //.............done
 * logo change (furniture site)
 

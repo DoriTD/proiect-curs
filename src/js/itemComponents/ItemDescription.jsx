@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import colors from "../sharedComponents/colors";
-import Star from "../sharedComponents/icons/star.svg";
+//import Star from "../sharedComponents/icons/star.svg";
 import Rating from "../sharedComponents/rating.jsx";
-import FullStar from "../sharedComponents/icons/full-star.svg";
-import LightStar from "../sharedComponents/icons/light-star.svg";
-import LightFullStar from "../sharedComponents/icons/light-full-star.svg";
+//import FullStar from "../sharedComponents/icons/full-star.svg";
+//import LightStar from "../sharedComponents/icons/light-star.svg";
+//import LightFullStar from "../sharedComponents/icons/light-full-star.svg";
 import ShoppingBasket from "../sharedComponents/icons/shopping-basket.svg";
 
 const StyledItem = styled.div`
   padding: 15px;
   > div {
     width: 100%;
+
     img {
       width: 50%;
       height: 650px;
@@ -29,11 +30,11 @@ const StyledItem = styled.div`
       }
       &:before {
         content: " ";
-        height: 4px;
-        background-color: #fbb710;
         width: 80px;
+        height: 4px;
         position: absolute;
         top: 70px;
+        background-color: #fbb710;
       }
     }
     .itemActions {
@@ -68,6 +69,7 @@ export default props => {
       .doc(props.productName)
       .onSnapshot(doc => {
         const prod = doc.data();
+        //console.log(prod)
         const rating = [];
         for (let i = 0; i < Math.round(prod.rating); i++) rating.push(true);
         for (let i = Math.round(prod.rating); i < 5; i++) rating.push(false);
@@ -114,7 +116,7 @@ export default props => {
             </div>
             <div className="itemActions">
               <Rating
-              fire={props.fire}
+                fire={props.fire}
                 rating={product.rating}
                 ratingUserCount={product.ratingUserCount}
                 productName={props.productName}
